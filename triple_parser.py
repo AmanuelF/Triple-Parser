@@ -28,8 +28,8 @@ def parse(filepath):
 				for pred in predicates:
 					subj = re.sub(r'ARG[0-9]', '', subj)
 					obj = re.sub(r'ARG[0-9]', '', obj)
-					predicate = re.sub(r'REL ', '', pred)
-					df_ = df_.append({'tweet_id':row[0], 'date_time':row[1], 'tweet_text':row[2], 'subject': subj.strip(), 'predicate':predicate , 'object': obj.strip()}, ignore_index=True)
+					pred = re.sub(r'REL ', '', pred)
+					df_ = df_.append({'tweet_id':row[0], 'date_time':row[1], 'tweet_text':row[2], 'subject': subj.strip(), 'predicate':pred.strip() , 'object': obj.strip()}, ignore_index=True)
     
 	return df_.drop(columns='tuples_clean')
 
