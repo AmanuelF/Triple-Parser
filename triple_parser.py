@@ -6,8 +6,7 @@ import json
 
 def parse(filepath):
 	df = pd.read_csv(filepath)
-	columns = df.columns
-	df_ = pd.DataFrame(columns=columns)
+	df_ = pd.DataFrame(columns=df.columns)
 	for i,row in df.iterrows():
 		REL_indices = list()  #list of indices of relations in a string
 		for item in row[3].split(': '):
